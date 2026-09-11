@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Personal About Me webpage of Riha Vankhede, BCA student and web development learner.">
+
+    <meta name="keywords"
+        content="Riha Vankhede, BCA Student, HTML, CSS, JavaScript, Java, Python, Web Development">
+
+    <meta name="author" content="Riha Vankhede">
+
+    <title>Riha Vankhede | About Me</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f3ff, #e0f2fe);
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+
+            padding: 15px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.10);
+        }
+
+        nav h2 {
+            color: #6c3fc5;
+            font-size: 26px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+
+            margin-left: 20px;
+
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #6c3fc5;
+        }
+
+
+        /* HERO SECTION */
+
+        header {
+            min-height: 450px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        .hero {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            color: #5532a8;
+            margin-bottom: 10px;
+        }
+
+        .hero h3 {
+            font-size: 23px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            background: linear-gradient(
+                135deg,
+                #6c3fc5,
+                #8b5cf6
+            );
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 13px 28px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 5px 15px rgba(108, 63, 197, 0.30);
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* MAIN */
+
+        main {
+            max-width: 1000px;
+
+            margin: auto;
+
+            padding: 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.92);
+
+            padding: 35px;
+
+            margin-bottom: 30px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        section h2 {
+            color: #623bb2;
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+            font-size: 30px;
+        }
+
+
+        /* PROFILE */
+
+        .profile {
+            text-align: center;
+        }
+
+        .profile img {
+            width: 190px;
+            height: 190px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 6px solid white;
+
+            outline: 5px solid #7546d8;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.20);
+        }
+
+        .profile h3 {
+            font-size: 27px;
+            color: #333;
+        }
+
+        .profile p {
+            color: #666;
+            font-size: 17px;
+        }
+
+
+        /* ABOUT */
+
+        .about-text {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: auto;
+
+            font-size: 17px;
+
+            color: #555;
+        }
+
+        .about-text b {
+            color: #623bb2;
+        }
+
+
+        /* SKILLS */
+
+        .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .card {
+            background:
+                linear-gradient(
+                    135deg,
+                    #f5f3ff,
+                    #ede9fe
+                );
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+
+            border: 1px solid #ddd;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 10px 20px rgba(0, 0, 0, 0.10);
+        }
+
+        .card h3 {
+            color: #623bb2;
+
+            margin-bottom: 10px;
+
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+
+        /* HOBBIES */
+
+        .hobbies {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 12px;
+        }
+
+        .hobby {
+            background: #ede9fe;
+
+            color: #5732a5;
+
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .hobby:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* CONTACT */
+
+        form {
+            max-width: 650px;
+
+            margin: auto;
+        }
+
+        label {
+            display: block;
+
+            margin-top: 15px;
+
+            margin-bottom: 6px;
+
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 13px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #7045c6;
+
+            box-shadow:
+                0 0 5px rgba(112, 69, 198, 0.20);
+        }
+
+        textarea {
+            height: 130px;
+
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #6c3fc5,
+                    #8b5cf6
+                );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+
+            opacity: 0.9;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #21163b;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 7px;
+
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h3 {
+                font-size: 19px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 25px 18px;
+            }
+
+            section h2 {
+                font-size: 26px;
+            }
+
+            .profile img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h2>Riha</h2>
+
+        <div>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#hobbies">Hobbies</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- HERO -->
+
+    <header id="home">
+
+        <div class="hero">
+
+            <h1>
+                Hello, I'm Riha 👋
+            </h1>
+
+            <h3>
+                BCA Student | Web Development Learner
+            </h3>
+
+            <p>
+                Welcome to my personal webpage.
+                I love learning technology,
+                programming and creating useful
+                websites and projects.
+            </p>
+
+            <a href="#about" class="btn">
+                Explore My Profile
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+
+        <!-- PROFILE -->
+
+        <section class="profile">
+
+            <h2>
+                My Profile
+            </h2>
+
+            <!--
+                PHOTO:
+                Put your photo in the same folder
+                and name it myphoto.jpg
+            -->
+
+            <img
+                src="myphoto.jpg"
+                alt="Photo of Riha Vankhede">
+
+            <h3>
+                Riha Vankhede
+            </h3>
+
+            <p>
+                Bachelor of Computer Applications (BCA)
+            </p>
+
+            <p>
+                💻 Aspiring Web Developer
+            </p>
+
+        </section>
+
+
+
+        <!-- ABOUT ME -->
+
+        <section id="about">
+
+            <h2>
+                About Me
+            </h2>
+
+            <div class="about-text">
+
+                <p>
+                    Hello! My name is
+                    <b>Riha Vankhede</b>.
+                    I am a BCA student interested
+                    in technology, programming and
+                    web development.
+                </p>
+
+                <br>
+
+                <p>
+                    I am learning
+                    <b>HTML, CSS, JavaScript,
+                    Java and Python</b>
+                    to improve my programming and
+                    technical skills.
+                </p>
+
+                <br>
+
+                <p>
+                    My goal is to create useful,
+                    simple and user-friendly
+                    websites and applications.
+                    I enjoy learning new things
+                    and working on practical projects.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SKILLS -->
+
+        <section id="skills">
+
+            <h2>
+                My Skills 💻
+            </h2>
+
+            <div class="cards">
+
+
+                <div class="card">
+
+                    <h3>
+                        🌐 HTML
+                    </h3>
+
+                    <p>
+                        Creating structured and
+                        semantic webpages.
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        🎨 CSS
+                    </h3>
+
+                    <p>
+                        Designing attractive and
+                        responsive websites.
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        ⚡ JavaScript
+                    </h3>
+
+                    <p>
+                        Learning interactive
+                        web development.
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        ☕ Java
+                    </h3>
+
+                    <p>
+                        Learning Java programming,
+                        OOP concepts and basic
+                        applications.
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        🐍 Python
+                    </h3>
+
+                    <p>
+                        Learning Python programming,
+                        syntax and basic programming
+                        concepts.
+                    </p>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        💡 Problem Solving
+                    </h3>
+
+                    <p>
+                        Learning to solve problems
+                        using programming and
+                        technology.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- HOBBIES -->
+
+        <section id="hobbies">
+
+            <h2>
+                My Hobbies ❤️
+            </h2>
+
+            <div class="hobbies">
+
+                <span class="hobby">
+                    📚 Reading
+                </span>
+
+                <span class="hobby">
+                    🎵 Listening Music
+                </span>
+
+                <span class="hobby">
+                    💻 Learning Technology
+                </span>
+
+                <span class="hobby">
+                    🌱 Learning New Things
+                </span>
+
+                <span class="hobby">
+                    🔍 Exploring
+                </span>
+
+                <span class="hobby">
+                    🖥️ Web Designing
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTACT FORM -->
+
+        <section id="contact">
+
+            <h2>
+                Contact Me 📩
+            </h2>
+
+            <form>
+
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required>
+
+
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required>
+
+
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    placeholder="Enter subject">
+
+
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Write your message..."
+                    required></textarea>
+
+
+
+                <button type="submit">
+                    Send Message 🚀
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Riha Vankhede
+        </p>
+
+        <p>
+            Made with ❤️ using HTML, CSS,
+            JavaScript, Java & Python
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
