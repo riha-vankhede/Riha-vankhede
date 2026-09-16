@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Flexbox Layout</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1{
+            text-align: center;
+            margin: 30px;
+            color: #333;
+        }
+
+        /* Flexbox Container */
+
+        .container{
+
+            width: 90%;
+            margin: auto;
+
+            display: flex;
+
+            /* Mobile view - One Column */
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
+
+        /* Three Sections */
+
+        .box{
+
+            background-color: white;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0px 5px 10px gray;
+
+            flex: 1;
+        }
+
+
+        .box h2{
+
+            color: #007bff;
+
+            margin-bottom: 10px;
+        }
+
+
+        .box p{
+
+            color: #555;
+
+            line-height: 1.5;
+        }
+
+
+
+        /* Desktop View */
+
+        @media (min-width: 768px){
+
+            .container{
+
+                /* Three boxes in one row */
+
+                flex-direction: row;
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>Responsive 3 Section Layout</h1>
+
+
+    <div class="container">
+
+
+        <div class="box">
+
+            <h2>Section 1</h2>
+
+            <p>
+                This is first content section.
+                Flexbox creates responsive layouts.
+            </p>
+
+        </div>
+
+
+
+        <div class="box">
+
+            <h2>Section 2</h2>
+
+            <p>
+                On mobile this box comes below
+                the first section.
+            </p>
+
+        </div>
+
+
+
+
+        <div class="box">
+
+            <h2>Section 3</h2>
+
+            <p>
+                On desktop all three boxes
+                appear in one row.
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>

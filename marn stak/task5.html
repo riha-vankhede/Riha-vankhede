@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 1 - Interactive Buttons</title>
+<style>
+  body{font-family:Arial; padding:20px}
+  .card{border:1px solid #ccc; padding:20px; border-radius:10px;}
+  button{padding:6px 12px; margin:3px; cursor:pointer}
+  #myText{font-size:22px; margin:20px 0; padding:20px; border:1px dashed #888; border-radius:8px}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>Task 1: Interactive Buttons</h2>
+  <p id="myText">Hello! I am sample text. Change my style!</p>
+  
+  <b>Change Color:</b><br>
+  <button onclick="myText.style.color='red'">RED</button>
+  <button onclick="myText.style.color='green'">GREEN</button>
+  <button onclick="myText.style.color='blue'">BLUE</button>
+  <br><br>
+
+  <b>Change Font Family:</b><br>
+  <select onchange="myText.style.fontFamily=this.value">
+    <option value="Arial">Arial</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Verdana">Verdana</option>
+    <option value="cursive">Cursive</option>
+  </select>
+  <br><br>
+
+  <b>Change Font Size:</b><br>
+  <button onclick="myText.style.fontSize=(parseInt(getComputedStyle(myText).fontSize)+2)+'px'">A+ Increase</button>
+  <button onclick="myText.style.fontSize=(parseInt(getComputedStyle(myText).fontSize)-2)+'px'">A- Decrease</button>
+  <br><br>
+
+  <b>Change Font Style (Mouseover):</b><br>
+  <button onmouseover="myText.style.fontWeight='bold'" onmouseout="myText.style.fontWeight='normal'">Bold</button>
+  <button onmouseover="myText.style.fontStyle='italic'" onmouseout="myText.style.fontStyle='normal'">Italic</button>
+  <button onmouseover="myText.style.textDecoration='underline'" onmouseout="myText.style.textDecoration='none'">Underline</button>
+</div>
+
+<script>
+  const myText = document.getElementById('myText');
+</script>
+</body>
+</html>
